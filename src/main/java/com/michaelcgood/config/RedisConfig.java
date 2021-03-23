@@ -20,7 +20,12 @@ public class RedisConfig {
 
     @Bean
     JedisConnectionFactory jedisConnectionFactory() {
-        return new JedisConnectionFactory();
+        //return new JedisConnectionFactory();
+        JedisConnectionFactory jedisConFactory
+      = new JedisConnectionFactory();
+    jedisConFactory.setHostName("lot13005");
+    jedisConFactory.setPort(6379);
+    return jedisConFactory;
     }
 
     @Bean
